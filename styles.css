@@ -3650,7 +3650,6 @@ svg circle:nth-child(2) {
     background-color: transparent;
     border: 1px solid #6826FF;
     color: rgba(23, 23, 24, 0.60);
-    ;
     box-shadow: none;
 }
 
@@ -3981,4 +3980,15 @@ svg circle:nth-child(2) {
         padding: 0px 20px;
         margin: auto;
     }
+}
+
+
+
+
+.dropdown__menu {
+    display: none;
+}
+
+.show-dropdown .dropdown__menu {
+    display: block;
 }

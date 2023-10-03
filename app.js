@@ -56,3 +56,24 @@ jQuery(document).ready(function () {
     },
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the elements
+  var navToggle = document.getElementById("nav-tooggle");
+  var navMenu = document.getElementById("nav-menu");
+
+  // Add click event listener to the toggle button
+  navToggle.addEventListener("click", function () {
+    // Toggle the class to show/hide the dropdown
+    navMenu.classList.toggle("show-dropdown");
+  });
+
+  // Add click event listener to close the dropdown when a link is clicked
+  var dropdownLinks = document.querySelectorAll(".dropdown__link");
+  dropdownLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      // Remove the class to hide the dropdown
+      navMenu.classList.remove("show-dropdown");
+    });
+  });
+});
