@@ -3603,7 +3603,7 @@ svg circle:nth-child(2) {
     text-transform: capitalize;
     color: rgba(23, 23, 24, 0.60);
     padding: 18px 24px;
-    border-radius: 16px;
+    border-radius: 8px;
 }
 
 .contact-section2 form .form-select {
@@ -3615,7 +3615,7 @@ svg circle:nth-child(2) {
     text-transform: capitalize;
     color: rgba(23, 23, 24, 0.60);
     padding: 18px 24px;
-    border-radius: 16px;
+    border-radius: 8px;
 }
 
 
@@ -3658,7 +3658,7 @@ svg circle:nth-child(2) {
     background-color: transparent;
     border: 1px solid #6826FF;
     color: #6826FF;
-    border-radius: 16px;
+    border-radius: 8px;
     transition: 0.3s linear;
 }
 
