@@ -274,7 +274,7 @@ p {
 
 
 /* header style start  */
-.header {
+/* .header {
     position: fixed;
     top: 0;
     left: 0;
@@ -291,18 +291,18 @@ p {
     background-color: #210B53;
     width: 100%;
     z-index: 999;
-}
+} */
 
 /*=============== NAV ===============*/
-.nav {
+/* .nav {
     height: 5rem;
-    /* position: fixed;
+    position: fixed;
   top: 0;
   left: 0;
-  width: 100%;*/
-    /* background-color: var(--black-color); */
-}
-
+  width: 100%;
+    background-color: var(--black-color);
+} */
+/*
 .nav__logo,
 .nav__burger,
 .nav__close {
@@ -355,7 +355,7 @@ p {
 }
 
 /* Navigation for mobile devices */
-@media screen and (max-width: 991px) {
+/*@media screen and (max-width: 991px) {
     .header {
         display: block;
     }
@@ -400,37 +400,32 @@ p {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-}
+} */
 
 
 /* Show menu */
-.show-menu {
+/* .show-menu {
     opacity: 1;
     top: 5rem;
     pointer-events: initial;
-}
+} */
 
 /* Show icon */
-.show-icon .nav__burger {
+/* .show-icon .nav__burger {
     opacity: 0;
     transform: rotate(90deg);
-}
+} */
 
-.show-icon .nav__close {
+/* .show-icon .nav__close {
     opacity: 1;
     transform: rotate(90deg);
-}
+} */
 
 /*=============== DROPDOWN ===============*/
-.dropdown__item {
+/* .dropdown__item {
     cursor: pointer;
 }
 
-.dropdown__arrow {
-    font-size: 1.25rem;
-    font-weight: initial;
-    transition: transform .4s;
-}
 
 .dropdown__link,
 .dropdown__sublink {
@@ -467,32 +462,32 @@ p {
     max-height: 0;
     overflow: hidden;
     transition: max-height .4s ease-out;
-}
+} */
 
 /* Show dropdown menu & submenu */
-.dropdown__item:hover .dropdown__menu,
+/* .dropdown__item:hover .dropdown__menu,
 .dropdown__subitem:hover>.dropdown__submenu {
     max-height: 1000px;
     transition: max-height .4s ease-in;
-}
+} */
 
 /* Rotate dropdown icon */
-.dropdown__item:hover .dropdown__arrow {
+/* .dropdown__item:hover .dropdown__arrow {
     transform: rotate(180deg);
-}
+} */
 
 /*=============== DROPDOWN SUBMENU ===============*/
-.dropdown__add {
+/* .dropdown__add {
     margin-left: auto;
 }
 
 .dropdown__sublink {
     background-color: #fff;
-}
+} */
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 340px) {
+/* @media screen and (max-width: 340px) {
     .container {
         margin-inline: 1rem;
     }
@@ -500,10 +495,10 @@ p {
     .nav__link {
         padding-inline: 1rem;
     }
-}
+} */
 
 /* For large devices */
-@media screen and (min-width: 992px) {
+/* @media screen and (min-width: 992px) {
     .container {
         margin-inline: auto;
     }
@@ -527,7 +522,6 @@ p {
 
     .nav__link {
         height: 100%;
-        /* padding: 0; */
         justify-content: initial;
         column-gap: .25rem;
     }
@@ -570,21 +564,21 @@ p {
     }
 
     /* Show dropdown menu */
-    .dropdown__item:hover .dropdown__menu {
+/* .dropdown__item:hover .dropdown__menu {
         opacity: 1;
         top: 3.5rem;
         pointer-events: initial;
         transition: top .3s;
-    }
+    } */
 
-    /* Show dropdown submenu */
-    .dropdown__subitem:hover>.dropdown__submenu {
+/* Show dropdown submenu */
+/* .dropdown__subitem:hover>.dropdown__submenu {
         opacity: 1;
         top: 0;
         pointer-events: initial;
         transition: top .3s;
     }
-}
+}  */
 
 /* header style End  */
 
@@ -3984,11 +3978,178 @@ svg circle:nth-child(2) {
 
 
 
-
-.dropdown__menu {
+/*** Navbar Start ***/
+.dropdown-toggle::after {
     display: none;
 }
 
-.show-dropdown .dropdown__menu {
+.header {
+    display: none;
+    ;
+}
+
+.header2 {
     display: block;
+}
+
+.nav-bar {
+    background: #210B53;
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 10px 12px;
+    font-weight: 400;
+    font-size: 16px;
+    transition: .5s;
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+
+    .header {
+        display: block;
+        ;
+    }
+
+    .header2 {
+        display: none;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        transition: .5s linear;
+        opacity: 0;
+    }
+
+    .nav-item:hover i {
+        display: inline-block;
+        transform: rotate(180deg);
+    }
+
+    .nav-item:hover .dropdown-menu {
+        transform: rotateX(0deg);
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/* The above code is defining a CSS rule for when a link inside a dropdown menu is being hovered over.
+It sets the background color to the value of the CSS variable "--bs-primary" and the text color to
+the value of the CSS variable "--bs-white". */
+.dropdown .dropdown-menu a:hover {
+    background: var(--banner-bg-color);
+    color: #fff;
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+}
+
+.nav__toggle {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.nav__burger,
+.nav__close {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
+    opacity: 0;
+}
+
+/*** Navbar End ***/
+
+
+.nav__logo,
+.nav__burger,
+.nav__close {
+    color: #fff;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+
+}
+
+.nav__burger,
+.nav__close {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
+    opacity: 0;
+}
+
+.show-icon .nav__burger {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.show-icon .nav__close {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.button-group {
+    display: block;
+    position: relative;
+}
+
+.dropdown__arrow {
+    /* font-size: 1.25rem; */
+    font-weight: initial;
+    transition: transform .4s;
+    transform: rotate(0deg);
+    display: inline-block;
+}
+
+.dropdown .show .dropdown__arrow {
+    transform: rotate(180deg);
+}
+
+
+
+
+@media screen and (max-width:991px) {
+    .header2 .nav-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header2 .nav-link {
+        width: 100%;
+        padding: 10px 0px!important;
+    }
+    .header2 .lang-btn{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+        .header2 .dropdown-menu.show{
+            width: 100%;
+        }
+
 }
